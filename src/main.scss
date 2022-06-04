@@ -1,0 +1,62 @@
+.center-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fixed-height{
+    height: 100vh;
+}
+
+
+
+.input__field{
+    margin-bottom: 1rem;
+
+
+    input {
+        height: 2rem;
+    }
+}
+
+.button {
+    display: flex;
+    .btn{
+        border: none;
+        border-radius: 8px;
+        padding: 10px 25px;
+        cursor: pointer;
+
+        &-primary {
+            background-color: #064ccf;
+            color: #fff;
+        }
+    }
+
+    &-right{
+        justify-content: flex-end;
+    }
+}
+
+
+.text{
+
+    &-primary{
+        color: #064ccf;
+    }
+
+    &-danger{
+        color: #ff0000;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    padding: 0;
+    margin: 0;
+}

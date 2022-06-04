@@ -1,0 +1,47 @@
+<div class="center-container fixed-height">
+  <div class="login">
+    <div class="header">
+      <div class="header__title">
+        <h1 class="text-primary">
+          CorkBoard<span class="text-danger">It</span>
+        </h1>
+      </div>
+      <div class="header__title-sub">
+        <img
+          src="https://assets.dryicons.com/uploads/icon/preview/735/large_1x_multi_user_comment.png"
+          alt=""
+        />
+        <div>
+          <p>Explore.</p>
+          <p>Share.</p>
+          <p>Inspire.</p>
+        </div>
+      </div>
+    </div>
+    <div class="form">
+      <form (submit)="submit()">
+        <div class="input__field">
+          <div class="label">
+            <label for="mail" class="email__label">Email</label>
+          </div>
+          <div class="input">
+            <input id="email" type="email" placeholder="Email" required />
+            <span></span>
+          </div>
+        </div>
+        <div class="input__field">
+          <div class="label">
+            <label for="pin" class="pin__label">Pin</label>
+          </div>
+          <div class="input">
+            <input id="pin" type="password" placeholder="Pin" required />
+            <span></span>
+          </div>
+        </div>
+        <div class="button button-right">
+          <button class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
