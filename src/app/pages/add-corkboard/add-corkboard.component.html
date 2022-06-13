@@ -1,0 +1,78 @@
+<div class="center-container fixed-height">
+  <div class="add__corkboard">
+    <div class="form">
+      <div class="form__header">
+        <h1 class="">Add Corkboard</h1>
+      </div>
+      <form>
+        <div class="input__field">
+          <div class="label">
+            <label for="mail" class="email__label">Title</label>
+          </div>
+          <div class="input">
+            <input
+              id="email"
+              [(ngModel)]="model.name"
+              name="name"
+              type="text"
+              placeholder="Title"
+              required
+            />
+            <span></span>
+          </div>
+        </div>
+        <div class="input__field">
+          <div class="label">
+            <label for="pin" class="pin__label">Category</label>
+          </div>
+          <div class="input">
+            <select [(ngModel)]="model.category" name="category" id="">
+              <option
+                *ngFor="let category of categories"
+                [value]="category.value"
+              >
+                {{ category.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="radio__input">
+          <div class="label">
+            <label class="pin__label">Visibility</label>
+          </div>
+          <div class="input__field">
+            <div class="input">
+              <input
+                id="public"
+                [(ngModel)]="model.visibility"
+                name="visibility"
+                type="radio"
+                value="public"
+              />
+              <label for="public">Public</label>
+            </div>
+          </div>
+          <div class="input__field">
+            <div class="input">
+              <input
+                id="private"
+                [(ngModel)]="model.visibility"
+                name="visibility"
+                type="radio"
+                value="private"
+              />
+              <label for="private">Private</label>
+            </div>
+            <div *ngIf="model.visibility == 'private'">
+              <input type="text" [(ngModel)]="model.password" name="password" id="" required />
+            </div>
+          </div>
+        </div>
+        <div class="button button-space">
+          <button class="btn btn-default" (click)="submit()">Cancel</button>
+          <button class="btn btn-primary" (click)="create()">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

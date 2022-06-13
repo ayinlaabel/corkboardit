@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}
+
+.user{
+  color: green;
+
+  & p{
+    line-height: 1.2;
+  }
+
+  &name{
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.branding {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  & h3 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  & div {
+    display: flex;
+    justify-content: flex-end;
+
+    & p {
+      font-size: 10px;
+      line-height: 1;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+}

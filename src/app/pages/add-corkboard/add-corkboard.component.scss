@@ -1,0 +1,51 @@
+.add__corkboard {
+  height: 300px;
+  width: 400px;
+}
+
+.form {
+  margin-bottom: 20px;
+  form {
+    & .input__field {
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+
+      & .label {
+        width: 60px;
+
+        & label {
+          font-size: 16px;
+        }
+      }
+
+      & .input {
+        position: relative;
+        width: 100%;
+        max-width: 330px;
+
+        input[type="text"],
+        input[type="email"],
+        select {
+          background: rgb(196, 196, 196);
+          border: none;
+          padding: 8px;
+          border-radius: 4px;
+          height: 40px;
+          width: 100%;
+          color: #444;
+
+          &:focus {
+            outline: none;
+          }
+        }
+        select * {
+            padding: 10px;
+            font-size: 14px;
+            height: 120px !important;
+
+        }
+      }
+    }
+  }
+}

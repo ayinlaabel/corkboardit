@@ -19,13 +19,13 @@
       </div>
     </div>
     <div class="form">
-      <form (submit)="submit()">
+      <form>
         <div class="input__field">
           <div class="label">
             <label for="mail" class="email__label">Email</label>
           </div>
           <div class="input">
-            <input id="email" type="email" placeholder="Email" required />
+            <input id="email" [(ngModel)]="model.email" name="email" type="email" placeholder="Email" required />
             <span></span>
           </div>
         </div>
@@ -34,12 +34,12 @@
             <label for="pin" class="pin__label">Pin</label>
           </div>
           <div class="input">
-            <input id="pin" type="password" placeholder="Pin" required />
+            <input id="pin" [(ngModel)]="model.pin" name="pin" type="password" placeholder="Pin" required />
             <span></span>
           </div>
         </div>
         <div class="button button-right">
-          <button class="btn btn-primary">Submit</button>
+          <button class="btn btn-primary" (click)="submit()">Submit</button>
         </div>
       </form>
     </div>
