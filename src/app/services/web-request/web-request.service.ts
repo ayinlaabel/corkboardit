@@ -34,7 +34,7 @@ export class WebRequestService {
 
   delete(uri: string) {
     const url = `${this.ROOT_URL}/${uri}`;
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("x-access-token");
     let headers = new HttpHeaders().set("x-access-token", `${token}`);
     return this.http.delete(url, { headers });
   }

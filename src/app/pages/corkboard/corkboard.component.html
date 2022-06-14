@@ -1,8 +1,42 @@
 <div class="center-container fixed-height">
-    <div class="corkboard">
-        <app-header></app-header>
-        <div class="pushpin">
-            <img src="" alt="">
+  <div class="corkboard">
+    <app-header></app-header>
+    <div class="corkboardit">
+      <div class="top">
+        <div>
+          <div class="user">
+            <div class="name">{{ name }}</div>
+            <div class="button">
+              <div class="btn btn-primary btn-sm">Follow</div>
+            </div>
+          </div>
+          <div class="title">{{ corkboard.name }}</div>
+          <div class="date">
+            Last Updated {{ corkboard.updatedAt | date }} at
+            {{ corkboard.updatedAt | date: "shortTime" }}
+          </div>
         </div>
+        <div class="ort">
+          <div class="category">{{ corkboard.category | titlecase }}</div>
+          <div class="button">
+            <button
+              class="btn btn-default btn-md"
+              [ngClass]="owner ? 'disable' : ''"
+            >
+              Add pushpin
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="pushpin">
+        <img src="" alt="" />
+      </div>
+      <div class="watch">
+        This corkboard has 8 watchers.
+        <div class="button">
+          <button class="btn btn-primary btn-sm">Watch</button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

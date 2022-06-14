@@ -20,6 +20,18 @@ export class CorkboardService {
     return this.webReq.post("corkboard", payload);
   }
 
+  getCorkboard() {
+    return this.webReq.get("corkboard/getAll");
+  }
+
+  getCorkboardById(payload: Object){
+    return this.webReq.post('corkboard/byId', payload)
+  }
+
+  getCorkboardOwner(payload: object){
+    return this.webReq.post('/corkboard/user', payload)
+  }
+
   logout() {
     localStorage.removeItem("x-access-token");
     this.router.navigate(["/login"]);

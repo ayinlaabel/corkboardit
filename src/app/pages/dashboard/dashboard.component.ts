@@ -16,9 +16,10 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.corkboardService
-      .getRecentCorkBoard()
-      .subscribe((res) => (this.recentCorkboards = res));
+    this.corkboardService.getRecentCorkBoard().subscribe((res) => {
+      this.recentCorkboards = res;
+      console.log(this.recentCorkboards);
+    });
   }
 
   addCorkboard() {
