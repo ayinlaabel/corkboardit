@@ -15,6 +15,8 @@ export class CorkboardComponent implements OnInit {
   user: any;
   currentUser: any;
   name: String;
+  corkboardUser: any;
+  pushpins: any;
 
   constructor(
     private corkboardService: CorkboardService,
@@ -28,16 +30,20 @@ export class CorkboardComponent implements OnInit {
     this.corkboardService
       .getCorkboardById({ id: this.id })
       .subscribe((corkboard) => {
-        console.log(corkboard);
         this.corkboard = corkboard;
+        this.corkboardUser = corkboard["userId"];
+        this.corkboardService
+          .getCorkboardOwner({ id: this.corkboardUser })
+          .subscribe((user) => {
+            this.name = user["firstName"] + " " + user["lastName"];
+          });
       });
 
-    this.corkboardService.getCorkboardOwner({ id: 1 }).subscribe((user) => {
-      console.log(user);
-      this.name = user["firstName"] + " " + user["lastName"];
+    this.corkboardService.getPushPin({ id: this.id }).subscribe((pushins) => {
+      this.pushpins = pushins;
     });
 
-    if (this.userId == this.corkboard.userId) {
+    if (this.userId == this.corkboardUser) {
       this.owner = true;
     }
   }

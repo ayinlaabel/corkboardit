@@ -9,6 +9,7 @@ import { CorkboardService } from "src/app/services/corkboard/corkboard.service";
 })
 export class DashboardComponent implements OnInit {
   recentCorkboards: any;
+  userCorkboard: any;
 
   constructor(
     private router: Router,
@@ -20,6 +21,16 @@ export class DashboardComponent implements OnInit {
       this.recentCorkboards = res;
       console.log(this.recentCorkboards);
     });
+
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      this.corkboardService
+        .getCorkboardByCurrentUser({ id: user.id })
+        .subscribe((corkboards) => {
+          this.userCorkboard = corkboards;
+          console.log(corkboards)
+        });
+    }
   }
 
   addCorkboard() {

@@ -46,3 +46,17 @@
   padding: 10px;
   border-top: 1px solid #444;
 }
+
+.pushpin {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+
+  & img {
+    padding: 5px;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+
+  }
+}

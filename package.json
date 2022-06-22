@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "@cloudinary/angular-5.x": "^1.5.3",
+    "ad-file-upload": "^0.0.3",
     "ng2-cloudinary": "^0.9.2",
     "npm": "^8.12.1",
     "rxjs": "~6.4.0",

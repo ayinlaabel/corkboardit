@@ -1,36 +1,69 @@
 <div class="center-container fixed-height">
   <div class="dashboard">
     <app-header></app-header>
-    <div class="recent">
-      <div class="recent__header">
-        <p>Recent CorkBoardIt Updates</p>
+    <div class="corkboard__dashboard">
+      <div class="recent">
+        <div class="recent__header">
+          <p>Recent CorkBoardIt Updates</p>
 
-        <div class="button">
-          <button class="btn">Popular Tags</button>
+          <div class="button">
+            <button class="btn btn-default btn-sm">Popular Tags</button>
+          </div>
+        </div>
+        <div class="corkboard" *ngFor="let corkboard of recentCorkboards">
+          <div class="corkboard__container">
+            <h3 class="corkboard__title text-uppercase">
+              <a [routerLink]="['/corkboard/' + corkboard.id]"
+                >{{ corkboard.name }}
+                <span
+                  *ngIf="corkboard.visibility == 'private'"
+                  class="text-danger"
+                  >(Private)</span
+                ></a
+              >
+            </h3>
+            <p>
+              updated by <span class="username">Krane Abel</span> on
+              <span class="date">{{ corkboard.createdAt | date }}</span> at
+              <span class="time">{{
+                corkboard.createdAt | date: "shortTime"
+              }}</span>
+            </p>
+          </div>
         </div>
       </div>
-      <div class="corkboard" *ngFor="let corkboard of recentCorkboards">
-        <div class="corkboard__container">
-          <h3 class="corkboard__title text-uppercase"><a [routerLink]="['/corkboard/' + corkboard.id]">{{ corkboard.name }}</a></h3>
-          <p>
-            updated by <span class="username">Krane Abel</span> on
-            <span class="date">{{ corkboard.createdAt | date }}</span> at
-            <span class="time">{{ corkboard.createdAt | date: 'shortTime' }}</span>
-          </p>
+      <div class="user__corkboard">
+        <div class="user__corkboard-header">
+          <p>My CorkBoards</p>
+          <div class="button">
+            <button class="btn btn-primary btn-md" (click)="addCorkboard()">
+              Add Corkboard
+            </button>
+          </div>
+        </div>
+        <div class="corkboard">
+          <div class="corkboard__container">
+            <span class="to" *ngFor="let cork of userCorkboard">
+              <h3 class="corkboard__title">
+                {{ cork.name }}
+              </h3>
+              <span class="text-danger" *ngIf="cork.visibility == 'private'"
+                >(Private)</span
+              >
+            </span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="user__corkboard">
-      <div class="user__corkboard-header">
-        <p>My CorkBoards</p>
-        <div class="button">
-          <button class="btn" (click)="addCorkboard()">Add Corkboard</button>
-        </div>
+    <div class="search">
+      <div class="input__field">
+        <input
+          type="text"
+          placeholder="Search description, tags and corkboard category"
+        />
       </div>
-      <div class="corkboard">
-        <div class="corkboard__container">
-          <h3 class="corkboard__title">Pools with 22 Pushpins</h3>
-        </div>
+      <div class="button">
+        <button class="btn btn-primary btn-md">PushPin Search</button>
       </div>
     </div>
   </div>

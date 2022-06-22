@@ -1,7 +1,8 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { AddCorkboardComponent } from "./pages/add-corkboard/add-corkboard.component";
 
+import { AddCorkboardComponent } from "./pages/add-corkboard/add-corkboard.component";
+import { AddPushpinComponent } from "./pages/add-pushpin/add-pushpin.component";
 import { CorkboardComponent } from "./pages/corkboard/corkboard.component";
 import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 import { LoginComponent } from "./pages/login/login.component";
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: "corkboard/:id",
     component: CorkboardComponent,
+  },
+  {
+    path: "corkboard/:id/add-pushpin",
+    component: AddPushpinComponent,
   },
   {
     path: "add-corkboard",

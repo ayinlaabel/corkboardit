@@ -64,3 +64,34 @@
 a{
   text-decoration: none;
 }
+
+.to {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  h3,
+  span:not(:last-child){
+    margin-right: 5px;
+  }
+}
+
+.search {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  margin: 10px 50px 10px 30px;
+
+  & .input__field{
+    width: 250px;
+    margin-right: 5px;
+    margin-bottom: 0px !important;
+    & input {
+      width: 100%;
+    }
+  }
+}
+
+.corkboard__dashboard {
+  min-height: calc(100% - 20px);
+}

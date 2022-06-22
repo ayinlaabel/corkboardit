@@ -16,20 +16,32 @@ export class CorkboardService {
     return this.webReq.get("corkboard");
   }
 
+  getCorkboardByCurrentUser(payload: Object) {
+    return this.webReq.post("corkboard/get-corkboard-byUserId",payload );
+  }
+
   createCorkBoard(payload: Object) {
     return this.webReq.post("corkboard", payload);
+  }
+
+  addPushpin(payload: Object) {
+    return this.webReq.post("add-pushpin", payload);
   }
 
   getCorkboard() {
     return this.webReq.get("corkboard/getAll");
   }
 
-  getCorkboardById(payload: Object){
-    return this.webReq.post('corkboard/byId', payload)
+  getCorkboardById(payload: Object) {
+    return this.webReq.post("corkboard/byId", payload);
   }
 
-  getCorkboardOwner(payload: object){
-    return this.webReq.post('/corkboard/user', payload)
+  getCorkboardOwner(payload: object) {
+    return this.webReq.post("corkboard/user", payload);
+  }
+
+  getPushPin(payload: Object) {
+    return this.webReq.post("corkboard/get-pushpin", payload);
   }
 
   logout() {

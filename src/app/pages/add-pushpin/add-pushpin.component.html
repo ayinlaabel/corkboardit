@@ -1,0 +1,95 @@
+<div class="center-container fixed-height">
+  <div class="pushpin">
+    <div class="form">
+      <div class="form__header">
+        <h1 class="">Add Pushpin</h1>
+        <p>to {{ corkboard }}</p>
+      </div>
+      <form>
+        <div class="option">
+          <p>Picture Option</p>
+          <div>
+            <input
+              type="radio"
+              [(ngModel)]="option"
+              name="option"
+              id="urlOption"
+              value="url"
+            />
+            <label for="urlOption">url</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              [(ngModel)]="option"
+              name="option"
+              id="upload"
+              value="upload"
+            />
+            <label for="upload">upload</label>
+          </div>
+        </div>
+        <div class="input__field">
+          <div class="label">
+            <label for="url" class="email__label">Picture</label>
+          </div>
+          <div class="input" *ngIf="option == 'url'">
+            <input
+              id="url"
+              [(ngModel)]="model.url"
+              name="url"
+              type="text"
+              placeholder="Picture url"
+              required
+            />
+            <span></span>
+          </div>
+          <div class="input" *ngIf="option == 'upload'">
+            <input
+              id="image"
+              type="file"
+              adFileSelect
+              [uploader]="image"
+            />
+            <span></span>
+          </div>
+        </div>
+        <div class="input__field">
+          <div class="label">
+            <label for="description" class="email__label">Description</label>
+          </div>
+          <div class="input">
+            <textarea
+              id="description"
+              [(ngModel)]="model.description"
+              name="description"
+              placeholder="Title"
+              required
+            ></textarea>
+            <span></span>
+          </div>
+        </div>
+        <div class="input__field">
+          <div class="label">
+            <label for="tag" class="email__label">Tag</label>
+          </div>
+          <div class="input">
+            <input
+              id="tag"
+              [(ngModel)]="tag"
+              name="tag"
+              type="text"
+              placeholder="Tags should be separated with comma (,)"
+              required
+            />
+            <span></span>
+          </div>
+        </div>
+        <div class="button button-space">
+          <button class="btn btn-default btn-sm">Cancel</button>
+          <button class="btn btn-primary btn-sm" (click)="submit()">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

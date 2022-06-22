@@ -11,7 +11,10 @@ import { HeaderComponent } from "./shared/header/header.component";
 import { CorkboardComponent } from "./pages/corkboard/corkboard.component";
 import { AddCorkboardComponent } from "./pages/add-corkboard/add-corkboard.component";
 import { WebReqInterceptor } from "./interceptor/web-req.interceptor";
-import { PushpinComponent } from './pages/pushpin/pushpin.component';
+import { PushpinComponent } from "./pages/pushpin/pushpin.component";
+import { AddPushpinComponent } from "./pages/add-pushpin/add-pushpin.component";
+import { Ng2CloudinaryModule } from "ng2-cloudinary";
+import { AdFileUploadModule } from "ad-file-upload";
 
 @NgModule({
   declarations: [
@@ -22,8 +25,16 @@ import { PushpinComponent } from './pages/pushpin/pushpin.component';
     CorkboardComponent,
     AddCorkboardComponent,
     PushpinComponent,
+    AddPushpinComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AdFileUploadModule,
+    HttpClientModule,
+    FormsModule,
+    Ng2CloudinaryModule,
+  ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

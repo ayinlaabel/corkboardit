@@ -18,23 +18,23 @@
         </div>
         <div class="ort">
           <div class="category">{{ corkboard.category | titlecase }}</div>
-          <div class="button">
-            <button
+          <div class="button" *ngIf="userId == corkboardUser">
+            <a
+              [routerLink]="['/corkboard/'+ corkboard.id +'/add-pushpin']"
               class="btn btn-default btn-md"
-              [ngClass]="owner ? 'disable' : ''"
             >
               Add pushpin
-            </button>
+          </a>
           </div>
         </div>
       </div>
-      <div class="pushpin">
-        <img src="" alt="" />
+      <div class="pushpin" >
+        <img *ngFor="let pushpin of pushpins" [src]="pushpin.url" alt="" />
       </div>
       <div class="watch">
         This corkboard has 8 watchers.
-        <div class="button">
-          <button class="btn btn-primary btn-sm">Watch</button>
+        <div class="button" *ngIf="userId != corkboardUser">
+          <button class="btn btn-sm">Watch</button>
         </div>
       </div>
     </div>

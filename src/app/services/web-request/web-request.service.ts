@@ -14,6 +14,7 @@ export class WebRequestService {
     const url = `${this.ROOT_URL}/${uri}`;
     const token = localStorage.getItem("x-access-token");
     let headers = new HttpHeaders().set("x-access-token", `${token}`);
+
     return this.http.get(url, { headers });
   }
 
@@ -21,7 +22,9 @@ export class WebRequestService {
     const url = `${this.ROOT_URL}/${uri}`;
     const token = JSON.parse(localStorage.getItem("x-access-token"));
     console.log(token);
-    let headers = new HttpHeaders().set("x-access-token", `${token}`);
+    let headers = new HttpHeaders()
+      .set("x-access-token", `${token}`)
+      .set("Content-Type", "application/json");
     return this.http.post(url, payload, { headers });
   }
 
