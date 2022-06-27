@@ -17,11 +17,15 @@ export class CorkboardService {
   }
 
   getCorkboardByCurrentUser(payload: Object) {
-    return this.webReq.post("corkboard/get-corkboard-byUserId",payload );
+    return this.webReq.post("corkboard/get-corkboard-byUserId", payload);
   }
 
   createCorkBoard(payload: Object) {
     return this.webReq.post("corkboard", payload);
+  }
+
+  privateCorkboard(payload: Object) {
+    return this.webReq.post("corkboard/private", payload);
   }
 
   addPushpin(payload: Object) {

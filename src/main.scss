@@ -62,8 +62,6 @@
     &-md {
       padding: 6px 15px;
     }
-
-    
   }
 
   &-right {
@@ -146,10 +144,9 @@ p {
           }
         }
         select * {
-            padding: 10px;
-            font-size: 14px;
-            height: 120px !important;
-
+          padding: 10px;
+          font-size: 14px;
+          height: 120px !important;
         }
       }
     }
@@ -171,12 +168,15 @@ textarea {
     margin-right: 20px;
   }
 
-  & input[type="radio"]{
+  & input[type="radio"] {
     margin-right: 5px;
   }
 
-  & div:not(:last-child){
+  & div:not(:last-child) {
     margin-right: 10px;
-
   }
+}
+
+.cursor {
+  cursor: pointer;
 }

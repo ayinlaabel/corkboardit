@@ -15,6 +15,7 @@ import { PushpinComponent } from "./pages/pushpin/pushpin.component";
 import { AddPushpinComponent } from "./pages/add-pushpin/add-pushpin.component";
 import { Ng2CloudinaryModule } from "ng2-cloudinary";
 import { AdFileUploadModule } from "ad-file-upload";
+import { PrivateCorkboardComponent } from './pages/private-corkboard/private-corkboard.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AdFileUploadModule } from "ad-file-upload";
     AddCorkboardComponent,
     PushpinComponent,
     AddPushpinComponent,
+    PrivateCorkboardComponent,
   ],
   imports: [
     BrowserModule,

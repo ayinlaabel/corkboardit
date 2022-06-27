@@ -6,6 +6,7 @@ import { AddPushpinComponent } from "./pages/add-pushpin/add-pushpin.component";
 import { CorkboardComponent } from "./pages/corkboard/corkboard.component";
 import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 import { LoginComponent } from "./pages/login/login.component";
+import { PrivateCorkboardComponent } from "./pages/private-corkboard/private-corkboard.component";
 
 const routes: Routes = [
   {
@@ -26,7 +27,11 @@ const routes: Routes = [
     component: CorkboardComponent,
   },
   {
-    path: "corkboard/:id",
+    path: "corkboard/public/:id",
+    component: CorkboardComponent,
+  },
+  {
+    path: "corkboard/private/:id",
     component: CorkboardComponent,
   },
   {
@@ -36,6 +41,10 @@ const routes: Routes = [
   {
     path: "add-corkboard",
     component: AddCorkboardComponent,
+  },
+  {
+    path: ":id/private-corkboard",
+    component: PrivateCorkboardComponent,
   },
 ];
 

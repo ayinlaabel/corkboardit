@@ -28,12 +28,20 @@ export class DashboardComponent implements OnInit {
         .getCorkboardByCurrentUser({ id: user.id })
         .subscribe((corkboards) => {
           this.userCorkboard = corkboards;
-          console.log(corkboards)
+          console.log(corkboards);
         });
     }
   }
 
   addCorkboard() {
     this.router.navigate(["/add-corkboard"]);
+  }
+
+  onCorkboard(corkboard: any) {
+    if (corkboard.visibility == "private") {
+      this.router.navigate([corkboard.id + "/private-corkboard"]);
+    } else {
+      this.router.navigate(["/corkboard/public/" + corkboard.id]);
+    }
   }
 }

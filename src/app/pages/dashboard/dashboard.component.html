@@ -12,16 +12,16 @@
         </div>
         <div class="corkboard" *ngFor="let corkboard of recentCorkboards">
           <div class="corkboard__container">
-            <h3 class="corkboard__title text-uppercase">
-              <a [routerLink]="['/corkboard/' + corkboard.id]"
-                >{{ corkboard.name }}
-                <span
-                  *ngIf="corkboard.visibility == 'private'"
-                  class="text-danger"
-                  >(Private)</span
-                ></a
+            <span class="to">
+              <h3 class="corkboard__title text-uppercase cursor">
+                <a (click)="onCorkboard(corkboard)">{{ corkboard.name }} </a>
+              </h3>
+              <span
+                *ngIf="corkboard.visibility == 'private'"
+                class="text-danger"
+                >(Private)</span
               >
-            </h3>
+            </span>
             <p>
               updated by <span class="username">Krane Abel</span> on
               <span class="date">{{ corkboard.createdAt | date }}</span> at
