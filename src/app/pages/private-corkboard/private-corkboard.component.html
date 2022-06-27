@@ -1,7 +1,19 @@
 <div class="center-container fixed-height">
   <div class="corkboard__password" *ngIf="!corkboard">
     <div class="container">
-      <div class="message text-danger"></div>
+      <div class="message text-danger">
+        <div class="icon">
+          <span>
+            <i class="fas fa-ban"></i>
+          </span>
+        </div>
+        <div class="text__message">
+          <span
+            >The CorkBoard you are trying to view is private. Please enter the
+            CorkBoard's password to continue.</span
+          >
+        </div>
+      </div>
       <div class="form">
         <div class="input__field">
           <label for="password">Password</label>

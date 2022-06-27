@@ -7,64 +7,94 @@
   padding: 10px;
 }
 
-.corkboard__password{
+.corkboard__password {
+  display: flex;
+  align-items: center;
 
   & .container {
-    
+    width: 100%;
+
+    & .form {
+      padding: 50px;
+
+      & .input__field label {
+        margin-right: 15px;
+      }
+
+      & .input__field input {
+        min-width: 290px;
+      }
+    }
+  }
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: lighten(#444, 60);
+  padding: 20px 40px;
+
+  .text__message {
+    font-size: 18px;
+  }
+
+  .icon {
+    font-size: 5rem;
+    margin-right: 20px;
   }
 }
 
 .corkboardit {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 520px;
+}
+
+.top {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+
+  & .name {
+    font-size: 22px;
+    font-weight: 500;
+    margin-right: 10px;
   }
-  
-  .top {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
+}
+
+.title {
+  font-size: 18px;
+}
+
+.ort {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.watch {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid #444;
+}
+
+.pushpin {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+
+  & img {
+    padding: 5px;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
   }
-  
-  .user {
-    display: flex;
-    align-items: center;
-  
-    & .name {
-      font-size: 22px;
-      font-weight: 500;
-      margin-right: 10px;
-    }
-  }
-  
-  .title {
-    font-size: 18px;
-  }
-  
-  .ort {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .watch {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-top: 1px solid #444;
-  }
-  
-  .pushpin {
-    display: flex;
-    width: 100%;
-    max-width: 500px;
-  
-    & img {
-      padding: 5px;
-      width: 200px;
-      max-width: 100%;
-      height: auto;
-  
-    }
-  }
+}

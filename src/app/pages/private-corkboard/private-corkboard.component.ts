@@ -13,6 +13,7 @@ export class PrivateCorkboardComponent implements OnInit {
   corkboard: any;
   name: any;
   pushpin: any;
+  corkboardUser: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +32,12 @@ export class PrivateCorkboardComponent implements OnInit {
       .privateCorkboard({ id: this.id, password: this.password })
       .subscribe((corkboard) => {
         this.corkboard = corkboard;
+        this.corkboardUser = corkboard["userId"];
+        this.corkboardService
+          .getCorkboardOwner({ id: this.corkboardUser })
+          .subscribe((user) => {
+            this.name = user["firstName"] + " " + user["lastName"];
+          });
       });
   }
 }
